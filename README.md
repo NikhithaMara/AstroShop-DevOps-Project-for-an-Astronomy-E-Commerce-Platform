@@ -14,21 +14,25 @@ This project reflects a full DevOps workflow applied to a real-world system, hel
 I chose the E-Commerce Demo Project open-sourced by OpenTelemetry, which simulates an online store selling astronomy products like telescopes.
 This project is built using a microservices architecture, with each service implemented in a different language or framework. Below is a list of the microservices and their descriptions:
 
-# Microservice    	     Language	             Description
-# frontend    	           TypeScript	           Serves the website through an HTTP server. Does not require sign-up/login and generates session IDs automatically.
-# product-catalog	        Go	                   Provides a list of products from a JSON file. Supports search and retrieval of individual products.
-cart	                  .NET	                  Stores and retrieves items in a user’s shopping cart using Valkey(open source in memory Caching Service similar to Redis) .
-shipping	               Rust	                 Calculates shipping cost estimates based on the contents of the cart and destination address.
-quote                  	PHP	                  Calculates shipping cost based on the number of items to be shipped.
-checkout	               Go                   	Orchestrates order processing: retrieves the cart, processes payment, manages shipping, and triggers email confirmation.
-currency	               C++	                  Converts monetary values between currencies using real-time rates from the European Central Bank. High QPS service.
-payment	                JavaScript	           Credit card payment processing and returns a transaction ID.
-email	                  Ruby	                 Sends order confirmation emails to users.
-ad	                     Java	                 Serves text-based ads based on context keywords.
-recommendation	         Python	               Recommends products based on the current cart contents.
-accounting	            .NET                  	Processes completed orders and tracks the total sales.
-load-generator	         Python	               Simulates realistic shopping behavior by continuously sending requests to the frontend.
-react-native-app	       TypeScript	           React Native mobile application providing a UI for the shopping services.
+### 🧩 Microservices Overview
+
+| **Microservice**      | **Language**     | **Description** |
+|-----------------------|------------------|-----------------|
+| `frontend`            | TypeScript       | Serves the website via HTTP. Automatically generates session IDs. |
+| `product-catalog`     | Go               | Lists/searches products from a JSON file. |
+| `cart`                | .NET             | Stores and retrieves shopping cart data using Valkey. |
+| `shipping`            | Rust             | Estimates shipping cost based on the cart and address. |
+| `quote`               | PHP              | Calculates shipping based on item count. |
+| `checkout`            | Go               | Handles full order flow: cart, payment, shipping, email. |
+| `currency`            | C++              | Converts between currencies using ECB rates. High QPS. |
+| `payment`             | JavaScript       | Mocks credit card transactions. |
+| `email`               | Ruby             | Sends order confirmation emails. |
+| `ad`                  | Java             | Displays contextual ads. |
+| `recommendation`      | Python           | Suggests products based on the cart. |
+| `accounting`          | .NET             | Aggregates order values. |
+| `load-generator`      | Python           | Simulates user shopping flows for testing. |
+| `react-native-app`    | TypeScript       | Mobile UI for shopping services. |
+
 
 🏗️ Project Architecture
 <img width="580" height="386" alt="image" src="https://github.com/user-attachments/assets/b48c92f6-48a7-45e9-8cc4-a077ea43a5ad" />
