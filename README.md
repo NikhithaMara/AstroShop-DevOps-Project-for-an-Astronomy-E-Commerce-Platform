@@ -36,21 +36,48 @@ This project is built using a microservices architecture, with each service impl
 # 🏗️ Project Architecture
 <img width="580" height="386" alt="image" src="https://github.com/user-attachments/assets/b48c92f6-48a7-45e9-8cc4-a077ea43a5ad" />
 
+# 🌐 Application Flow (High-Level)
+
+* Requests from the internet first hit a reverse proxy (server-side), which:
+
+  ✅ Validates traffic
+
+  ⚖️ Load balances requests
+
+  🔀 Routes them to the frontend service
+
+* The frontend serves the UI and communicates with backend microservices over HTTP/gRPC.
+
+* Microservices handle specific business logic like:
+
+🛒 Cart
+
+🚚 Shipping
+
+💳 Payment
+
+📦 Product Catalog
+
+✉️ Email, etc.
+
+* A React Native mobile app interacts with the backend via the same APIs.
+
+* A load generator simulates user traffic for testing and observability.
+
 # 🎨 Design Questions I Got When I Started
 
 # 🤔 Why choose microservice architecture over monolithic?
-Scalability: Microservices allow independent scaling of components based on demand, unlike monoliths which scale as a whole.
-Flexibility: Different services can use different technologies best suited for their tasks.
-Faster Deployment: Smaller, focused teams can develop, test, and deploy services independently, speeding up release cycles.
-Fault Isolation: Failures in one microservice don’t necessarily bring down the entire system.
+* Scalability: Microservices allow independent scaling of components based on demand, unlike monoliths which scale as a whole.
+* Flexibility: Different services can use different technologies best suited for their tasks.
+* Faster Deployment: Smaller, focused teams can develop, test, and deploy services independently, speeding up release cycles.
+* Fault Isolation: Failures in one microservice don’t necessarily bring down the entire system.
 
 # ⚖️ Can’t I use a load balancer instead of a reverse proxy?
-Load balancer distributes incoming traffic across multiple servers using simple algorithms (e.g., round-robin), ensuring even load distribution.
-Reverse proxy can act as a load balancer but offers additional features like User authentication and validation, URL interception and routing, SSL termination
-and Caching
+* Load balancer distributes incoming traffic across multiple servers using simple algorithms (e.g., round-robin), ensuring even load distribution.
+* Reverse proxy can act as a load balancer but offers additional features like User authentication and validation(example block this ip address), URL interception and smart    routing, SSL termination and Caching
 In short, a reverse proxy not only balances load but also adds flexibility and security layers, making it a more versatile choice.
 
-🔍 For a detailed explanation of Monolithic architecture & Proxies, please check the Prerequisites folder.
+# 🔍 For a detailed explanation of Monolithic architecture & Proxies, please check the Prerequisites folder.
 
 
 
