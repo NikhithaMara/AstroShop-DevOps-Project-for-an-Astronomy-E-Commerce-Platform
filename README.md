@@ -36,33 +36,13 @@ This project is built using a microservices architecture, with each service impl
 # 🏗️ Project Architecture
 <img width="580" height="386" alt="image" src="https://github.com/user-attachments/assets/b48c92f6-48a7-45e9-8cc4-a077ea43a5ad" />
 
-# 🌐 Application Flow (High-Level)
+# 🌐 Application Flow:
 
-* Requests from the internet first hit a reverse proxy (server-side), which:
-
-  ✅ Validates traffic
-
-  ⚖️ Load balances requests
-
-  🔀 Routes them to the frontend service
-
-* The frontend serves the UI and communicates with backend microservices over HTTP/gRPC.
-
-* Microservices handle specific business logic like:
-
-🛒 Cart
-
-🚚 Shipping
-
-💳 Payment
-
-📦 Product Catalog
-
-✉️ Email, etc.
-
-* A React Native mobile app interacts with the backend via the same APIs.
-
-* A load generator simulates user traffic for testing and observability.
+   * Requests from the internet first hit a reverse proxy (server-side), which Validates traffic, Load balances requests and Routes them to the frontend service
+   * The frontend serves the UI and communicates with backend microservices over HTTP/gRPC protocold
+   * Microservices handle specific business logic like Cart, Shipping, Payment, Product Catalog, Email, etc.
+   * A load generator simulates user traffic for testing and observability.
+   * A React Native mobile app interacts with the backend via the same APIs.
 
 # 🎨 Design Questions I Got When I Started
 
