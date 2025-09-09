@@ -1,4 +1,7 @@
 ### Prerequisite Learning Required:
+
+#### Monolithic & Microservice Architecture:
+
 When we have an e-commerce application, for example, amazon.com, it includes multiple business functionalities or requirements such as user authentication, product catalog, cart, shipping, and order confirmation email.
 * If we include all these functionalities in a single codebase as modules, and every module shares variables and common libraries, then we cannot separate them easily. This creates problems:
 If we change one module, it may affect others due to dependencies.
@@ -23,16 +26,18 @@ may affect other modules                                      | Easier teamwork 
 | CI/CD triggers for the whole application                    | CI/CD triggers only for the changed service                   |
 | Cannot scale/build/deploy independently                     | Can scale/build/deploy independently                           |
 
-### Forward Proxy
+### Different types of Proxies:
+
+#### Forward Proxy
 * Sits in front of the client (before reaching the internet).
 * Intercepts requests, checks for malicious URLs, and is often used in companies for security.
 
-### Reverse Proxy
+#### Reverse Proxy
 * Sits in front of the server.
 * Handles SSL/TLS encryption internally within Kubernetes networks, performs security checks, and routes traffic based on URLs.
 * Functions as a load balancer and can also handle caching.
 
-### Load Balancer
+#### Load Balancer
 * Balances incoming traffic across servers using simple routing algorithms (e.g., round-robin, which distributes requests equally among servers).
 * Typically handles external traffic to the application using encryption, but not internal traffic within Kubernetes networks.
 * Cannot forward requests based on URL content.
