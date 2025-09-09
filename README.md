@@ -1,3 +1,8 @@
+## 👋 About Me
+
+Hi, I’m Nikhitha Mara , an aspiring DevOps Engineer passionate about learning AWS and deploying projects to build real-world DevOps skills.
+I’m actively working on hands-on projects and sharpening my knowledge to break into DevOps roles. This repo documents my learning journey and showcases projects focused on cloud infrastructure, automation, CI/CD, and monitoring.
+
 ## 🧠 Why I Chose This Project
 
 In today's world, almost every company  from brands like Nike to platforms like Amazon has an online store to sell products. This makes building an eCommerce application a common and highly relevant real-world scenario. This project gave me hands-on exposure to:
@@ -9,7 +14,7 @@ In today's world, almost every company  from brands like Nike to platforms like 
 
 This project reflects a full DevOps workflow applied to a real-world system, helping me strengthen my practical skills in deployment, scalability, and infrastructure management.
 
-# 🛒 Project Overview
+## 🛒 Project Overview
 
 I chose the E-Commerce Demo Project open-sourced by OpenTelemetry, which simulates an online store selling astronomy products like telescopes.
 This project is built using a microservices architecture, with each service implemented in a different language or framework. Below is a list of the microservices and their descriptions:
@@ -33,10 +38,10 @@ This project is built using a microservices architecture, with each service impl
 | `load-generator`      | Python           | Simulates user shopping flows for testing. |
 | `react-native-app`    | TypeScript       | Mobile UI for shopping services. |
 
-# 🏗️ Project Architecture
+## 🏗️ Project Architecture
 <img width="580" height="386" alt="image" src="https://github.com/user-attachments/assets/b48c92f6-48a7-45e9-8cc4-a077ea43a5ad" />
 
-# 🌐 Application Flow:
+### 🌐 Application Flow:
 
    * Requests from the internet first hit a reverse proxy (server-side), which Validates traffic, Load balances requests and Routes them to the frontend service
    * The frontend serves the UI and communicates with backend microservices over HTTP/gRPC protocold
@@ -44,20 +49,20 @@ This project is built using a microservices architecture, with each service impl
    * A load generator simulates user traffic for testing and observability.
    * A React Native mobile app interacts with the backend via the same APIs.
 
-# 🎨 Design Questions I Got When I Started
+## 🎨 Design Questions I Got When I Started
 
-# 🤔 Why choose microservice architecture over monolithic?
+### 🤔 Why choose microservice architecture over monolithic?
 * Scalability: Microservices allow independent scaling of components based on demand, unlike monoliths which scale as a whole.
 * Flexibility: Different services can use different technologies best suited for their tasks.
 * Faster Deployment: Smaller, focused teams can develop, test, and deploy services independently, speeding up release cycles.
 * Fault Isolation: Failures in one microservice don’t necessarily bring down the entire system.
 
-# ⚖️ Can’t I use a load balancer instead of a reverse proxy?
+### ⚖️ Can’t I use a load balancer instead of a reverse proxy?
 * Load balancer distributes incoming traffic across multiple servers using simple algorithms (e.g., round-robin), ensuring even load distribution.
 * Reverse proxy can act as a load balancer but offers additional features like User authentication and validation(example block this ip address), URL interception and smart    routing, SSL termination and Caching
 In short, a reverse proxy not only balances load but also adds flexibility and security layers, making it a more versatile choice.
 
-# 🔍 For a detailed explanation of Monolithic architecture & Proxies, please check the Prerequisites folder.
+## 🔍 For a detailed explanation of Monolithic architecture & Proxies, please check the Prerequisites folder.
 
 
 
