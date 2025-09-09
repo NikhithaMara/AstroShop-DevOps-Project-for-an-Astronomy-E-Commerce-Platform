@@ -1,3 +1,4 @@
+### Prerequisite Learning Required:
 When we have an e-commerce application, for example, amazon.com, it includes multiple business functionalities or requirements such as user authentication, product catalog, cart, shipping, and order confirmation email.
 * If we include all these functionalities in a single codebase as modules, and every module shares variables and common libraries, then we cannot separate them easily. This creates problems:
 If we change one module, it may affect others due to dependencies.
