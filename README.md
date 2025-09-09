@@ -3,11 +3,11 @@ An end-to-end DevOps project for an astronomy-themed eCommerce platform. Feature
 
 # 🧠 Why I Chose This Project
 In today's world, almost every company  from brands like Nike to platforms like Amazon has an online store to sell products. This makes building an eCommerce application a common and highly relevant real-world scenario. Most modern applications are built using a microservices architecture, with each service written in a different programming language. This project gave me hands-on exposure to:
-# Containerizing multiple microservices using Docker
-# Managing communication between services via REST APIs
-# Implementing a reverse proxy (Envoy) to route and validate requests before they reach backend services
-# Using load generation tools to simulate real-world traffic
-# Applying CI/CD pipelines, monitoring, and infrastructure automation
+Containerizing multiple microservices using Docker
+Managing communication between services via REST APIs
+Implementing a reverse proxy (Envoy) to route and validate requests before they reach backend services
+Using load generation tools to simulate real-world traffic
+Applying CI/CD pipelines, monitoring, and infrastructure automation
 
 This project reflects a full DevOps workflow applied to a real-world system, helping me strengthen my practical skills in deployment, scalability, and infrastructure management.
  
