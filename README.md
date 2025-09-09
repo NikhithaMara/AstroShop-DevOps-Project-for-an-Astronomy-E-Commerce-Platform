@@ -62,7 +62,7 @@ This project is built using a microservices architecture, with each service impl
 * Reverse proxy can act as a load balancer but offers additional features like User authentication and validation(example block this ip address), URL interception and smart    routing, SSL termination and Caching
 In short, a reverse proxy not only balances load but also adds flexibility and security layers, making it a more versatile choice.
 
-### 🔍 For a detailed explanation of Monolithic architecture & Proxies, please check the Prerequisites folder.
+### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder.
 
 
 
