@@ -1,11 +1,11 @@
 # 🧠 Why I Chose This Project
-In today's world, almost every company  from brands like Nike to platforms like Amazon has an online store to sell products. This makes building an eCommerce application a common and highly relevant real-world scenario. 
-Most modern applications are built using a microservices architecture, with each service written in a different programming language. This project gave me hands-on exposure to:
-Containerizing multiple microservices using Docker
-Managing communication between services via REST APIs
-Implementing a reverse proxy (Envoy) to route and validate requests before they reach backend services
-Using load generation tools to simulate real-world traffic
-Applying CI/CD pipelines, monitoring, and infrastructure automation
+
+In today's world, almost every company  from brands like Nike to platforms like Amazon has an online store to sell products. This makes building an eCommerce application a common and highly relevant real-world scenario. This project gave me hands-on exposure to:
+* Containerizing multiple microservices written in different progarmming languagues using Docker 
+* Managing communication between services via API calls
+* Implementing a reverse proxy (Envoy) to route and validate requests before they reach backend services
+* Using load generation tools to simulate real-world traffic
+* Applying CI/CD pipelines, monitoring, and infrastructure automation
 
 This project reflects a full DevOps workflow applied to a real-world system, helping me strengthen my practical skills in deployment, scalability, and infrastructure management.
 
@@ -33,10 +33,8 @@ This project is built using a microservices architecture, with each service impl
 | `load-generator`      | Python           | Simulates user shopping flows for testing. |
 | `react-native-app`    | TypeScript       | Mobile UI for shopping services. |
 
-
-🏗️ Project Architecture
+# 🏗️ Project Architecture
 <img width="580" height="386" alt="image" src="https://github.com/user-attachments/assets/b48c92f6-48a7-45e9-8cc4-a077ea43a5ad" />
-
 
 # 🎨 Design Questions I Got When I Started
 
