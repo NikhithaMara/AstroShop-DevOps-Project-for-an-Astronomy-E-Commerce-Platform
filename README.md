@@ -1,4 +1,4 @@
-# 🧠 Why I Chose This Project
+## 🧠 Why I Chose This Project
 
 In today's world, almost every company  from brands like Nike to platforms like Amazon has an online store to sell products. This makes building an eCommerce application a common and highly relevant real-world scenario. This project gave me hands-on exposure to:
 * Containerizing multiple microservices written in different progarmming languagues using Docker 
