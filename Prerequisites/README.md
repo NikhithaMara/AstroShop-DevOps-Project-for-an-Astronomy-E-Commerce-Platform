@@ -42,3 +42,6 @@ may affect other modules                                      | Easier teamwork 
 * Typically handles external traffic to the application using encryption, but not internal traffic within Kubernetes networks.
 * Cannot forward requests based on URL content.
 * Does not handle caching; it only distributes traffic.
+
+#### API- Application Programming Interface
+An API, or Application Programming Interface, allows one application to communicate with another. It defines all the operations that can be performed and exposes API endpoints (URLs) where the service can be reached. To send and receive data, we use a protocol such as HTTP, gRPC, or others for communication over the network.
