@@ -17,7 +17,7 @@ This project reflects a full DevOps workflow applied to a real-world system, hel
 ### 🛒 Project Overview
 
 I chose the E-Commerce Demo Project open-sourced by OpenTelemetry, which simulates an online store selling astronomy products like telescopes.
-This project is built using a microservices architecture, with each service implemented in a different language or framework. Below is a list of the microservices and their descriptions:
+This project is built using a microservices architecture, with each service implemented in a different language or framework so devopsifying this project gives me handson on different devops tools used in real world projects. Below is a list of the microservices and their descriptions:
 
 #### 🧩 Microservices Overview
 
