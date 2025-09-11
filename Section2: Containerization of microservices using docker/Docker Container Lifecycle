@@ -1,6 +1,6 @@
 📦 Why Containerization of Microservices?
  
-Instead of deploying monolithic applications on virtual machines like EC2 in AWS, when there is no much load any time could lead to:
+Instead of deploying monolithic applications on virtual machines like EC2 in AWS, when there is not much load, could lead to:
   🧠 Wasted resources (CPU, RAM)
   💸 Increased cost burden to the organization on cloud/on-premise platforms
 
