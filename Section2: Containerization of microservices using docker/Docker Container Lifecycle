@@ -4,7 +4,7 @@ Instead of deploying monolithic applications on virtual machines like EC2 in AWS
   🧠 Wasted resources (CPU, RAM)
   💸 Increased cost burden to the organization on cloud/on-premise platforms
 
-We use containerization to package services independently and deploy them on a single machine. This allows:
+use containerization to package applications independently and deploy them on a single machine with other applications. This allows:
 ⚙️ Efficient resource utilization
 📉 Cost reduction
 🧩 Service isolation and scalability
