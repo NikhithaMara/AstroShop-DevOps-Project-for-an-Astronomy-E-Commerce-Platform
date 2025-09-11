@@ -14,6 +14,8 @@ To prevent this, IAM helps organizations manage access securely by:
 * Attaching policies that specify what each user can do
 * Ensuring users are authenticated and authorized only for what they need based on RBAC(ROle Based Access Control)
 
+### So for impelmenting this project I created IAM user as below and loggin as IAM user for working on this project.
+
 Step1:
 <img width="925" height="452" alt="image" src="https://github.com/user-attachments/assets/331afe5c-29d9-49cc-badb-6da4980f6d21" />
 Step2:
