@@ -1,15 +1,16 @@
-####📦 Why Containerization of Microservices?
+📦 Why Containerization of Microservices?
+ 
+Instead of deploying monolithic applications on virtual machines like EC2 in AWS, when there is much load any time could lead to:
+  🧠 Wasted resources (CPU, RAM)
+  💸 Increased cost burden to the organization on cloud/on-premise platforms
 
-* Instead of deploying monolithic applications on virtual machines like EC2 in AWS, which can lead to:
-🧠 Wasted resources (CPU, RAM)
-💸 Increased cost burden to the organization
-
-* We use containerization to package services independently and deploy them on a single machine. This allows:
+We use containerization to package services independently and deploy them on a single machine. This allows:
 ⚙️ Efficient resource utilization
 📉 Cost reduction
 🧩 Service isolation and scalability
 
-#### 🐳 What is a Container?
+🐳 What is a Container?
+
 A container is a lightweight, portable package that includes:
 🧾 Application code
 🧰 System and application dependencies
@@ -17,6 +18,7 @@ Containers run using the host machine's resources only when needed and they are 
 operating system.To create and manage containers, I use a containerization platform — Docker.
 
 #### 🔁 Docker Lifecycle
+
 To create containers using Docker, follow these 3 steps:
 🛠️ Create a Dockerfile for the microservice
 🧱 Build the Docker image using the command docker build 
