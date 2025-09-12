@@ -29,6 +29,11 @@ Before that, I had already:
 * Created Dockerfiles for each service.
 * Built the Docker images.
 * Pushed the images to Docker Hub.
-
-I navigated to the relevant folder and ran the following command to run all the microservices as containers
-docker-compose up
+5. Install dockerengine on ubuntu following the docker userguide from official documentation https://docs.docker.com/engine/install/ubuntu/
+6. Add it to Apt pacakge to get it updated from linux repositories
+7. Docker daemon always runs with root previlage as the ubuntu user is not in docker group 
+8. Add user to the dockergroup using below command:
+   sudo usermod -aG docker ubuntu (usermod- modify user , -a meaning append to other groups, G - group , groupname and username)
+9. Restart the docker/ login again for the changes 
+10. I navigated to the relevant folder where docker files are and ran the following command to run all the microservices as containers
+   docker compose up
