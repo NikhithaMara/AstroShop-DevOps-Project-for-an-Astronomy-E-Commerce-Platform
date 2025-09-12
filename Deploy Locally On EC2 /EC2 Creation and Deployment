@@ -22,7 +22,7 @@ Before deploying the project on Kubernetes (K8s), I initially deployed it on an 
 
 🧪 Steps to Run the Application:
 1. Login to the instance using ssh -i "path of identity file(.pem) ubuntu@publicip
-2. After that clone the github repo using git clone "reponame"
+2. After that check if git already exists else install git using sudo apt install git then clone the github repo using git clone "reponame"
 3. Since I wanted to test all microservices together with their dependencies, I used Docker Compose instead of running each service individually with Docker commands.
 4.I cloned the GitHub repository onto the EC2 instance.
 Before that, I had already:
