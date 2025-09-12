@@ -24,6 +24,25 @@ To create containers using Docker, follow these 3 steps:
 🧱 Build the Docker image using the command docker build 
 🚀 Run the Docker image using the command docker run which creates containers
 
+# Dockerfile Steps:
+1.Get the Base Image:
+Use the FROM command to pull the base image for any application from the Docker Hub registry.
+2.Set the Working Directory:
+Use WORKDIR so that all commands are executed from this directory, and the container stores its files there.
+3.Install Dependencies:
+Copy all dependency files into the container and use the RUN command to install or download the dependencies.
+4.Copy the Source Code:
+Copy the application’s source code into the container.
+5.Set Environmental Variables:
+Set any necessary environmental variables, such as container ports.
+6.Set the Entry Point:
+Use the ENTRYPOINT command to specify the binary or executable file to run when the container starts.
+
+#Notes:
+Go: No runtime is needed as Go produces a self-contained binary that includes everything.
+Python: Python doesn’t need to be built; it’s executed line-by-line.
+Java: Requires a Java runtime environment (JRE) to run, and you can use Maven or Gradle for building.
+
 
 
 
