@@ -1,1 +1,32 @@
+✅ Before Deploying the Project on Kubernetes (K8s)
+Before deploying the project on Kubernetes (K8s), I initially deployed it on an EC2 instance for local testing of the application.
 
+🚀 Steps to Create an EC2 Instance:
+1. Log in to AWS using an IAM user.
+2. Navigate to the EC2 service on the AWS Console and click on "Launch Instance."
+3. Configure the instance:
+* Set the Instance Name       - Ecommerce-project
+* Choose the Operating System – I chose Ubuntu
+* Select the Instance Type    – I chose t2.large, which has 2 vCPUs and 8 GB RAM
+4. Create a key pair for remote login:
+* AWS generates a private key (.pem) file, which is downloaded to your local machine.
+  The public key is stored on the EC2 instance by AWS.
+  Secure the .pem file:
+  Since this is a sensitive file, only you should have access to it. I changed its permission to 400 using:
+  chmod 400 your-key.pem
+  4 = read (user)
+  0 = no permissions (group)
+  0 = no permissions (others)
+5. Allow SSH access under Network Settings (enable port 22).
+6. Click on "Launch Instance".
+
+🧪 Steps to Run the Application:
+Since I wanted to test all microservices together with their dependencies, I used Docker Compose instead of running each service individually with Docker commands.
+I cloned the GitHub repository onto the EC2 instance.
+Before that, I had already:
+* Created Dockerfiles for each service.
+* Built the Docker images.
+* Pushed the images to Docker Hub.
+
+I navigated to the relevant folder and ran the following command to run all the microservices as containers
+docker-compose up
