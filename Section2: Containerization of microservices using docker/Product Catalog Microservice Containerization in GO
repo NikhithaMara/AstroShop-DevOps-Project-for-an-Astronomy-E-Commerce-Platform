@@ -6,16 +6,16 @@ I followed a two-stage build process — build and release — to ensure that th
 
 🔨 Build Stage
 * Pulled the official golang:alpine base image from Docker Hub.
-* Set the WORKDIR to /usr/src/app for structured and consistent builds.
-* Copied the source code into the container.
+* Set the WORKDIR to /usr/src/app for structured and consistent builds in container.
+* Copied the source code from current directory into the container workdirectory
 * Downloaded Go dependencies using go mod download.
-* Compiled the Go source into a statically linked binary using go build.
+* Compiled the Go source into a binary using go build specify buildname and source code in current directory ./
 
 🚀 Release Stage
 * Started from a minimal alpine base image for reduced image size.
 * Copied only the built binary from the build stage (using --from=builder).
-* Included the required JSON data (/products) for runtime use.
-* Set the container's ENTRYPOINT to execute the built binary.
+* Included the required JSON data (/products) for runtime use and set environmental variable i.e,container port 
+* Set the container's ENTRYPOINT to execute the built binary so image has only binary and json file and as well the base alpine image
 
 # Dockerfile:
 
