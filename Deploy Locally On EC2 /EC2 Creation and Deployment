@@ -40,10 +40,12 @@ Before that, I had already:
 
 ✅ Issues Faced: EC2 ran into a no space issue.
 1. Increased the storage of the EBS volume attached to the instance from 8 GB to 30 GB using AWS.
-2. Checked the disk storage using df -h and block devices using lsblk.
-3. Installed cloud-utils for resizing the partition and file system.
+2. Checked the disk storage using df -h and block devices using lsblk command
+3. Installed cloud-utils for resizing the partition and file system using sudo apt install cloud-utils
 4. Checked which partition is mounted on the root (/).
-5. Increased the partition size and then the file system size as described below:
+5. Increased the partition size and then the file system size to use increased storage space as described below:
+  sudo growpart /dev/xvda 1 - increase partition size 1 on disk
+  sudo resize2fs /dev/xvda1  - increase file size
 
 Now, as the containers were running, when I accessed the site using the localhost IP address and port number,
 it said “Site can’t be reached” because the security group of the host did not have an inbound rule allowing 
