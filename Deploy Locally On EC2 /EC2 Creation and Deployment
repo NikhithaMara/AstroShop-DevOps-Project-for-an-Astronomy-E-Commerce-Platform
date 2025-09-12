@@ -21,8 +21,10 @@ Before deploying the project on Kubernetes (K8s), I initially deployed it on an 
 6. Click on "Launch Instance".
 
 🧪 Steps to Run the Application:
-Since I wanted to test all microservices together with their dependencies, I used Docker Compose instead of running each service individually with Docker commands.
-I cloned the GitHub repository onto the EC2 instance.
+1. Login to the instance using ssh -i "path of identity file(.pem) ubuntu@publicip
+2. After that clone the github repo using git clone "reponame"
+3. Since I wanted to test all microservices together with their dependencies, I used Docker Compose instead of running each service individually with Docker commands.
+4.I cloned the GitHub repository onto the EC2 instance.
 Before that, I had already:
 * Created Dockerfiles for each service.
 * Built the Docker images.
