@@ -1,23 +1,36 @@
 📦 Containerized Product Catalog Service (Go)
-
 This microservice, written in Go, was containerized using a multi-stage Docker build approach to produce a lightweight and production-ready Docker image.
 
 🛠️ Multi-Stage Docker Build Approach
 I followed a two-stage build process — build and release — to ensure that the final image contains only the necessary binaries and runtime files.
 
 🔨 Build Stage
-
-* Pulled the official golang:alpine image from Docker Hub.
+* Pulled the official golang:alpine base image from Docker Hub.
 * Set the WORKDIR to /usr/src/app for structured and consistent builds.
 * Copied the source code into the container.
 * Downloaded Go dependencies using go mod download.
 * Compiled the Go source into a statically linked binary using go build.
 
 🚀 Release Stage
-
 * Started from a minimal alpine base image for reduced image size.
 * Copied only the built binary from the build stage (using --from=builder).
 * Included the required JSON data (/products) for runtime use.
 * Set the container's ENTRYPOINT to execute the built binary.
+
+# Dockerfile:
+
+FROM golang:1.22-alpine AS builder
+WORKDIR /usr/src/app
+COPY . .
+RUN go mod download
+RUN go build -o product-catalog ./
+
+FROM alpine AS release
+WORKDIR /usr/src/app
+COPY ./products ./products
+COPY --from=builder /usr/src/app/product-catalog ./
+
+ENV PRODUCT_CATALOG_PORT 8080
+ENTRYPOINT ["./product-catalog"]
 
 
