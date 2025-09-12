@@ -1,4 +1,3 @@
-
 📦 Containerized Product Catalog Service (Go)
 This microservice, written in Go, was containerized using a multi-stage Docker build approach to produce a lightweight and production-ready Docker image.
 
