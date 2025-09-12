@@ -1,5 +1,24 @@
-FROM eclipse-temurin:21-jdk AS builder
+📦 Containerized Ad Service (Java)
+This microservice, written in Java, was containerized using a multi-stage Docker build approach to produce a lightweight and production-ready Docker image.
 
+🛠️ Multi-Stage Docker Build Approach
+I followed a two-stage build process — build and release — to ensure that the final image contains only the necessary binaries and runtime files.
+
+🔨 Build Stage
+* Pulled the official jdk base image from Docker Hub registry.
+* Set the WORKDIR to /usr/src/app for structured and consistent builds in container.
+* Copied gradle dependencies and source code into workdir and run the gradle to build java application
+*
+
+🚀 Release Stage
+* Started from a minimal jre base image from docker hub registry as java runtime needed for excuting the binary 
+* Copied only the built binary from the build stage (using --from=builder).
+* Included environmental variable i.e,container port 
+* Set the container's ENTRYPOINT to execute the built binary so image has only binary and base image so minimal chance of vulnerabilities and secure
+
+#Docker file
+
+FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /usr/src/app/
 
 COPY gradlew* settings.gradle* build.gradle .
@@ -16,7 +35,7 @@ RUN ./gradlew installDist -PprotoSourceDir=./proto
 
 #####################################################
 
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:21-jre AS release 
 
 WORKDIR /usr/src/app/
 
