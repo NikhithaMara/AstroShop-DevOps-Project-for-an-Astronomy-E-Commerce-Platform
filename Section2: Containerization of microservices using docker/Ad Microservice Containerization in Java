@@ -44,3 +44,8 @@ COPY --from=builder /usr/src/app/ ./
 ENV AD_PORT 9099
 
 ENTRYPOINT ["./build/install/opentelemetry-demo-ad/bin/Ad"]
+
+#After creating the docker file build the docker image and run the image 
+#added ubuntu user to the docker group so no need root previlage
+docker build -t "image name" (any tag you want to put for the image)
+docker run "imagename"
