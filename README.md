@@ -52,10 +52,10 @@ This project is built using a microservices architecture, with each service impl
 #### 🚀 Dockerfile Creation Approach
 
 This project contains multiple microservices organized within a single GitHub repository, with each microservice in its own folder.
-📖 Reviewed the documentation in each microservice’s folder to understand how to build and run the service.
-🖥️ Initially built and ran each microservice on an EC2 instance to verify functionality.
-🛠️ Since the microservices are developed using different languages—Java, Python, and Go—I created customized Dockerfiles for each service based on their specific requirements.
-✅ This approach ensured all microservices are properly containerized and run smoothly in their respective environments.
+* 📖 Reviewed the documentation in each microservice’s folder to understand how to build and run the service.
+* 🖥️ Initially built and ran each microservice on an EC2 instance to verify functionality.
+* 🛠️ Since the microservices are developed using different languages—Java, Python, and Go—I created customized Dockerfiles for each service based on their specific requirements.
+* This approach ensured all microservices are properly containerized and run smoothly in their respective environments.
 
 ### 🎨 Design Questions I Got When I Started
 
