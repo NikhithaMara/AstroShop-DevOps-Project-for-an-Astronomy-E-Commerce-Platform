@@ -1,7 +1,17 @@
+📦 Containerized Recommendation Service (Python)
+This microservice, written in python, was containerized using a docker file as python applications needs no build used single stage
+
+🔨 Build Stage
+* Pulled the official python:slim-bookworm base image from Docker Hub registry.
+* Set the WORKDIR to /usr/src/app for structured and consistent builds in container.
+* Copied the source code from current directory into the container workdirectory
+* Installed python libraries specified in requirements.txt file
+* Defined python program in Entrypoint to run 
+
+# Dockerfile
+
 FROM python:3.12-slim-bookworm AS base
-
 WORKDIR /usr/src/app
-
 COPY requirements.txt ./
 
 RUN pip install --upgrade pip
@@ -10,4 +20,8 @@ RUN pip install -r requirements.txt
 COPY . .
 
 ENTRYPOINT [ "python", "recommendation_server.py"]
-~                                                  
+                                               
+#After creating the docker file build the docker image and run the image 
+#added ubuntu user to the docker group so no need root previlage
+docker build -t "image name" (any tag you want to put for the image)
+docker run "imagename"
