@@ -1,3 +1,4 @@
+
 ### 👋 About Me
 
 Hi, I’m Nikhitha Mara , an aspiring DevOps Engineer passionate about learning AWS and deploying projects to build real-world DevOps skills.
@@ -81,8 +82,4 @@ EC2 ran into a no space issue.
 *  Verified which partition is mounted on root (/).
 * Increased the partition size and then resized the file system to utilize the expanded storage:
   sudo growpart /dev/xvda 1 — increase partition 1 on disk /dev/xvda
-  sudo resize2fs /dev/xvda1 — resize the filesystem on partition /dev/xvda1
-
-
-
-
+  sudo resize2fs /dev/xvda1 — resize the filesystem on partition 1
