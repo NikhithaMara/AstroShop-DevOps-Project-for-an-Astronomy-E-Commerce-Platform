@@ -36,4 +36,18 @@ Before that, I had already:
    sudo usermod -aG docker ubuntu (usermod- modify user , -a meaning append to other groups, G - group , groupname and username)
 9. Restart the docker/ login again for the changes 
 10. I navigated to the relevant folder where docker files are and ran the following command to run all the microservices as containers
-   docker compose up
+   docker compose up -d (to run in background else shows all steps and metrics of creation)
+
+✅ Issues Faced: EC2 ran into a no space issue.
+1. Increased the storage of the EBS volume attached to the instance from 8 GB to 30 GB using AWS.
+2. Checked the disk storage using df -h and block devices using lsblk.
+3. Installed cloud-utils for resizing the partition and file system.
+4. Checked which partition is mounted on the root (/).
+5. Increased the partition size and then the file system size as described below:
+
+Now, as the containers were running, when I accessed the site using the localhost IP address and port number,
+it said “Site can’t be reached” because the security group of the host did not have an inbound rule allowing 
+HTTP traffic. So, I changed the inbound rule to allow all traffic from anywhere since it is a website meant to be 
+accessible by everyone. After that, it worked.
+
+
