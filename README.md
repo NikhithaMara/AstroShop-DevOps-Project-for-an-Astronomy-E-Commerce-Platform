@@ -94,6 +94,11 @@ Stability, Scalability, High availability and Easier maintenance and disaster re
 * Verified which partition is mounted on root (/).
 * Increased the partition size and then resized the file system to utilize the expanded storage: sudo growpart /dev/xvda 1 — increase partition 1 on disk /dev/xvda sudo resize2fs /dev/xvda1 — resize the filesystem on partition 1
 
+##### 🔁 Difference Between Docker Compose & Kubernetes
+* Docker Compose simply executes multiple containers together through a single command by putting all services in one file, instead of running each one separately and     manually handling dependencies.
+* Kubernetes (K8s), on the other hand, is a container orchestration tool that provides high availability, service discovery, disaster recovery, auto-scaling,
+  and self-healing.
+
 ##### How I Resolved a Merge Conflict in Git (GitHub)
 * Encounter the Conflict:
   A merge conflict happens when two branches modify the same line of code.
@@ -106,10 +111,5 @@ Stability, Scalability, High availability and Easier maintenance and disaster re
   After resolving the conflicts, I staged the resolved files using git add.
 * Commit and Push:
   I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
-
-##### 🔁 Difference Between Docker Compose & Kubernetes
-* Docker Compose simply executes multiple containers together through a single command by putting all services in one file, instead of running each one separately and     manually handling dependencies.
-* Kubernetes (K8s), on the other hand, is a container orchestration tool that provides high availability, service discovery, disaster recovery, auto-scaling,
-  and self-healing.
 
   
