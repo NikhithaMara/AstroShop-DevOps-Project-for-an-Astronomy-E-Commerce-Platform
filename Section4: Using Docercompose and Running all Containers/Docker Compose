@@ -35,4 +35,4 @@ Create Docker-managed volumes that persist data on the host independently of con
 * Access a running container:
   docker exec -it <container_name> sh (any interactive environment base image/conatiner has)
 
-Notes : I have docker-compose.yml manifest and environmental variables file attached in this folder.
+Notes : I have docker-compose.yml manifest with all microservices and environmental variables file attached in this folder.
