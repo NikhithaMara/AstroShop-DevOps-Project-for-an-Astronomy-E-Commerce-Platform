@@ -107,5 +107,9 @@ Stability, Scalability, High availability and Easier maintenance and disaster re
 * Commit and Push:
   I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
 
+##### 🔁 Difference Between Docker Compose & Kubernetes
+* Docker Compose simply executes multiple containers together through a single command by putting all services in one file, instead of running each one separately and     manually handling dependencies.
+* Kubernetes (K8s), on the other hand, is a container orchestration tool that provides high availability, service discovery, disaster recovery, auto-scaling,
+  and self-healing.
 
   
