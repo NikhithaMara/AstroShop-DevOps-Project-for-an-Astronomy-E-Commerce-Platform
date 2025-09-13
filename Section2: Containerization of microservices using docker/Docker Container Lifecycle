@@ -38,7 +38,15 @@ Set any necessary environmental variables, such as container ports.
 6.Set the Entry Point:
 Use the ENTRYPOINT command to specify the binary or executable file to run when the container starts.
 
+# Docker Registry:
+For sharing the images , login into Docker Registry I have used Docker Hub Registry, but could
+be ECR or other registries too, use command docker push docker.io dockerusername/imagename : tag
+     docker.io - could be any registry
+     repositoryname - image name (creates a repository in a docker hub)
+     tag     - image tag on dockerhub
+
 #Notes:
+Within Organization we push images to the hub of an organization's account
 Go: No runtime is needed as Go produces a self-contained binary that includes everything.
 Python: Python doesn’t need to be built; it’s executed line-by-line.
 Java: Requires a Java runtime environment (JRE) to run, and you can use Maven or Gradle for building.
