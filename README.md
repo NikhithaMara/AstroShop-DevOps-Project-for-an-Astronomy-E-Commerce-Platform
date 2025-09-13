@@ -65,6 +65,25 @@ Fault Isolation: Failures in one microservice don’t necessarily bring down the
 Load balancer distributes incoming traffic across multiple servers using simple algorithms (e.g., round-robin), ensuring even load distribution.
 Reverse proxy can act as a load balancer but offers additional features like User authentication and validation(example block this ip address), URL interception and smart routing, SSL termination and Caching In short, a reverse proxy not only balances load but also adds flexibility and security layers, making it a more versatile choice.
 
+#### 🧩 Why can't I just use Docker instead of Kubernetes?
+Docker was introduced to solve the problem of "it works on my machine but not on yours." Containers package your application with all its dependencies, making it portable and consistent across environments. Containers are also lightweight, spin up quickly, and make better use of system resources compared to running multiple full VMs. This allows for more efficient resource utilization, especially in cloud or virtualized environments. However, Docker alone is not enough for production-grade deployments.
+##### 🚨 Limitations of Docker without Kubernetes:
+Containers are ephemeral (short-lived). If one crashes, it must be restarted manually or with basic Docker tools.
+Networking is fragile. If one container communicates with another using its IP, and that container restarts, its IP may change — breaking communication.
+Docker doesn't natively provide service discovery, load balancing, high availability, or self-healing.
+
+#### ✅ Why Kubernetes?
+Kubernetes was designed to orchestrate containers at scale. It handles:
+* Service discovery and stable networking between containers
+* Automatic restarts, scaling, and self-healing of failed containers
+* Load balancing traffic
+* High availability through clusters
+* Disaster recovery features
+
+#### 🌐 My Use Case
+For local development and testing, Docker is great. But for production, I used a managed Kubernetes service (Elastic Kubernetes Service(EKS)) to ensure
+Stability, Scalability, High availability and Easier maintenance and disaster recovery
+
 #### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder.
 
 #### ✅ Issues Faced
