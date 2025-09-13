@@ -1,12 +1,10 @@
 # Docker Compose
-
 For testing in local environments, instead of pulling all images from Docker Hub and running 
 each container separately (checking dependencies manually), it's better to write everything in one file 
 and run all containers together while managing dependencies. This is what the Docker Compose YAML file helps us achieve.
 
 # Structure of Docker Compose File
 A typical Docker Compose file has three main sections:
-
 1. Services
 Here, you define each container with:
 The image name to pull from a registry, or a Dockerfile under the build context to build the image locally.
@@ -14,33 +12,25 @@ Ports to expose.
 Environment variables.
 Memory/resource limits.
 depends_on to specify container dependencies, so containers start in the correct order.
-
 2. Networks
 Docker automatically creates a default bridge network for containers to communicate with each other and with the host.
 You can specify this or create custom networks. Containers have their own IPs within this network.
 Alternatively, containers can use the host network, sharing host IPs and ports.
-
 3.Volumes
 Containers are ephemeral — their data disappears when removed. For persistent data (e.g., databases), volumes let you:
 Map host folders to container directories (bind mounts), or
 Create Docker-managed volumes that persist data on the host independently of containers.
 
 # Key Docker Compose Commands
-
 * Start containers:
   docker compose up
-
 * Start containers in background (detached mode):
   docker compose up -d
-
 * Stop and remove containers:
   docker compose down
-
 * List all containers (running and stopped):
   docker ps -a
-
 * List running containers:
   docker ps
-
 * Access a running container:
   docker exec -it <container_name> sh (any interactive environment base image/conatiner has)
