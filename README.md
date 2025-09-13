@@ -77,17 +77,17 @@ Reverse proxy can act as a load balancer but offers additional features like Use
 
 ##### How I Resolved a Merge Conflict in Git (GitHub)
 * Encounter the Conflict
-  A merge conflict happens when two branches modify the same line of code.
+ - A merge conflict happens when two branches modify the same line of code.
 * Open Conflicting Files
-  Git marks the conflicting files as unmerged and shows conflict markers (<<<<<<<, =======, >>>>>>>).
+ - Git marks the conflicting files as unmerged and shows conflict markers (<<<<<<<, =======, >>>>>>>).
 * Resolve the Conflict
   I resolved the conflict by:
-* Opening the file and reviewing the changes in both branches.
-* Choosing the necessary changes to keep and discarding the ones that weren't needed.
-* Removing the conflict markers (<<<<<<<, =======, >>>>>>>) after making the necessary edits.
+ - Opening the file and reviewing the changes in both branches.
+ - Choosing the necessary changes to keep and discarding the ones that weren't needed.
+ - Removing the conflict markers (<<<<<<<, =======, >>>>>>>) after making the necessary edits.
 * Stage the Files
-  After resolving the conflicts, I staged the resolved files using git add.
+ - After resolving the conflicts, I staged the resolved files using git add.
 * Commit and Push
-  I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
+ - I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
 
   
