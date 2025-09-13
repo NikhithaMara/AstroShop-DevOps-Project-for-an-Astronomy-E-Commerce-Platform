@@ -3,7 +3,7 @@ For testing in local environments, instead of pulling all images from Docker Hub
 each container separately (checking dependencies manually), it's better to write everything in one file 
 and run all containers together while managing dependencies. This is what the Docker Compose YAML file helps us achieve.
 
-# Structure of Docker Compose File
+# Structure of Docker Compose File: uses yaml
 A typical Docker Compose file has three main sections:
 1. Services
 Here, you define each container with:
@@ -34,3 +34,5 @@ Create Docker-managed volumes that persist data on the host independently of con
   docker ps
 * Access a running container:
   docker exec -it <container_name> sh (any interactive environment base image/conatiner has)
+
+Notes : I have docker-compose.yml manifest and environmental variables file attached in this folder.
