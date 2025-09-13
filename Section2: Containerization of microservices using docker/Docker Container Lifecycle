@@ -46,7 +46,7 @@ be ECR or other registries too, use command docker push docker.io dockerusername
      tag     - image tag on dockerhub
 
 #Notes:
-Within Organization we push images to the hub of an organization's account
+Within Organization we push images to the Docker Registry of an organization's account
 Go: No runtime is needed as Go produces a self-contained binary that includes everything.
 Python: Python doesn’t need to be built; it’s executed line-by-line.
 Java: Requires a Java runtime environment (JRE) to run, and you can use Maven or Gradle for building.
