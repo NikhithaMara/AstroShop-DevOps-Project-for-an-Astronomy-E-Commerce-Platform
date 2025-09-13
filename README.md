@@ -68,7 +68,7 @@ Reverse proxy can act as a load balancer but offers additional features like Use
 #### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder.
 
 #### ✅ Issues Faced
-##### EC2 ran into a no space issue.
+##### Used Docker Compose for testing whole application with dependent microservices on EC2 instance and EC2 ran into a no space issue.
 * Increased the size of the attached EBS volume from 8 GB to 30 GB using AWS.
 * Checked disk storage with df -h and block devices with lsblk.
 * Installed cloud-utils to enable resizing of partitions and file systems: sudo apt install cloud-utils
@@ -87,5 +87,6 @@ Reverse proxy can act as a load balancer but offers additional features like Use
   After resolving the conflicts, I staged the resolved files using git add.
 * Commit and Push:
   I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
+
 
   
