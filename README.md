@@ -55,11 +55,11 @@ This project contains multiple microservices organized within a single GitHub re
 
 #### 🚀 Deployed E-commerce Application on EKS Using Terraform
 ✅ Terraform Best Practices Followed:
-🔒 Remote state is stored securely in Amazon S3, with DynamoDB used for state locking to avoid concurrent operations.
-🚫 State files are not committed to GitHub, as they may contain sensitive information such as IPs, resource IDs, and secrets.
-🧑‍🤝‍🧑 Shared remote state enables team collaboration and prevents resource duplication or conflicts.
-🔐 AWS authentication is handled through the configured AWS CLI, ensuring secure and authorized access to AWS services.
-📁 A separate backend.tf file is used for backend configuration, improving readability and separation of concerns.
+* 🔒 Remote state is stored securely in Amazon S3, with DynamoDB used for state locking to avoid concurrent operations.
+* 🚫 State files are not committed to GitHub, as they may contain sensitive information such as IPs, resource IDs, and secrets.
+* 🧑‍🤝‍🧑 Shared remote state enables team collaboration and prevents resource duplication or conflicts.
+* 🔐 AWS authentication is handled through the configured AWS CLI, ensuring secure and authorized access to AWS services.
+* 📁 A separate backend.tf file is used for backend configuration, improving readability and separation of concerns.
 
 #### 🎨 Design Questions I Got When I Started
 
