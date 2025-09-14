@@ -53,6 +53,14 @@ This project contains multiple microservices organized within a single GitHub re
 * 🛠️ Since the microservices are developed using different languages Java, Python, and Go. I created customized Dockerfiles for each service based on their specific requirements.
 * This approach ensured all microservices are properly containerized and run smoothly in their respective environments.
 
+#### 🚀 Deployed E-commerce Application on EKS Using Terraform
+✅ Terraform Best Practices Followed:
+🔒 Remote state is stored securely in Amazon S3, with DynamoDB used for state locking to avoid concurrent operations.
+🚫 State files are not committed to GitHub, as they may contain sensitive information such as IPs, resource IDs, and secrets.
+🧑‍🤝‍🧑 Shared remote state enables team collaboration and prevents resource duplication or conflicts.
+🔐 AWS authentication is handled through the configured AWS CLI, ensuring secure and authorized access to AWS services.
+📁 A separate backend.tf file is used for backend configuration, improving readability and separation of concerns.
+
 #### 🎨 Design Questions I Got When I Started
 
 #### 🤔 Why choose microservice architecture over monolithic?
@@ -86,7 +94,7 @@ Stability, Scalability, High availability and Easier maintenance and disaster re
 
 #### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder.
 
-#### ✅ Issues Faced
+#### ✅ Issues Faced 
 ##### Used Docker Compose for testing whole application with dependent microservices on EC2 instance and EC2 ran into a no space issue.
 * Increased the size of the attached EBS volume from 8 GB to 30 GB using AWS.
 * Checked disk storage with df -h and block devices with lsblk.
@@ -111,5 +119,7 @@ Stability, Scalability, High availability and Easier maintenance and disaster re
   After resolving the conflicts, I staged the resolved files using git add.
 * Commit and Push:
   I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
+
+  
 
   
