@@ -6,7 +6,24 @@ Terraform is a cloud-agnostic IaC tool that allows you to define and manage your
 ⚙️ Terraform Lifecycle Commands
 Here’s a quick overview of the typical Terraform workflow:
 * terraform init: Initializes the working directory, downloads the necessary provider plugins (e.g., AWS), sets up the backend (for remote state), and checks for syntax issues.
-* terraform plan: A dry run that shows what changes Terraform will make to your infrastructure — without actually applying them.
+* terraform plan: A dry run that shows what changes Terraform will make to your infrastructure — without actually applying them.(Showing wghat it does when applied)
 * terraform apply: creates/updates the resources on cloud provider(AWS) by making api calls with cloud provider.
 
 Behind the scenes, Terraform makes API calls to  cloud provider to provision and manage infrastructure based on your defined configuration.
+
+✅ AWS Authentication
+Before Terraformb creates resources on AWS , you need to authenticate with AWS else in which account it creates.
+This has been completed by configuring the AWS CLI using access key and secret access key credentials.
+
+📦 Terraform State File
+Terraform tracks all created infrastructure in a state file. This file acts as a source of truth for the current state of your AWS resources.
+When you run terraform apply, Terraform saves the resource metadata in a local file named state file
+This file is stored locally by default, meaning it's tied to the user/machine that ran the apply.
+
+If another user modifies the main.tf and runs terraform apply without access to the original state file, Terraform assumes the 
+infrastructure doesn’t exist and may try to recreate it. This can lead to resource duplication or conflicts, especially in a team setting.
+
+⚠️ Why You Shouldn't Share the State File on GitHub
+Avoid committing the Terraform state file to GitHub for the following reasons:
+It contains sensitive data, such as IP addresses, Resource IDs, Possibly secret values
+Storing it in version control poses a security risk.
