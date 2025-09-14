@@ -7,6 +7,6 @@ Terraform is a cloud-agnostic IaC tool that allows you to define and manage your
 Here’s a quick overview of the typical Terraform workflow:
 * terraform init: Initializes the working directory, downloads the necessary provider plugins (e.g., AWS), sets up the backend (for remote state), and checks for syntax issues.
 * terraform plan: A dry run that shows what changes Terraform will make to your infrastructure — without actually applying them.
-* terraform apply: Executes the planned changes and creates/updates the resources on your cloud provider (e.g., AWS).
+* terraform apply: creates/updates the resources on cloud provider(AWS) by making api calls with cloud provider.
 
 Behind the scenes, Terraform makes API calls to  cloud provider to provision and manage infrastructure based on your defined configuration.
