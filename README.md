@@ -3,13 +3,12 @@ Hi, I’m Nikhitha Mara , an aspiring DevOps Engineer passionate about learning 
 
 #### 🧠 Why I Chose This Project
 In today's world, almost every company from brands like Nike to platforms like Amazon has an online store to sell products. This makes building an eCommerce application a common and highly relevant real-world scenario. This project gave me hands-on exposure to:
-
-Containerizing multiple microservices written in different progarmming languagues using Docker
-Managing communication between services via API calls
-Implementing a reverse proxy (Envoy) to route and validate requests before they reach backend services
-Using load generation tools to simulate real-world traffic
-Applying CI/CD pipelines, monitoring, and infrastructure automation
-This project reflects a full DevOps workflow applied to a real-world system, helping me strengthen my practical skills in deployment, scalability, and infrastructure management.
+* Containerizing multiple microservices written in different progarmming languagues using Docker
+* Managing communication between services via API calls
+* Implementing a reverse proxy (Envoy) to route and validate requests before they reach backend services
+* Using load generation tools to simulate real-world traffic
+* Applying CI/CD pipelines, monitoring, and infrastructure automation
+This project reflects a full DevOps workflow applied to a real-world system, helping me strengthen my practical skills in deployment, scalability, and infrastructure management using AWS, IAM, EC2, S3, DynamoDB, Docker, Docker Compose, k8s, EKS.
 
 #### 🛒 Project Overview
 I chose the E-Commerce Demo Project open-sourced by OpenTelemetry, which simulates an online store selling astronomy products like telescopes. 
