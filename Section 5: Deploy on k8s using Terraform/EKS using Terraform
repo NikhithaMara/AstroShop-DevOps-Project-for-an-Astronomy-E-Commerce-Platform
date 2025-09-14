@@ -1,1 +1,12 @@
+🌍 Why Terraform?
+Using the AWS Console to create infrastructure is fine for just 1 or 2 resources. But what happens when you need to manage dozens or hundreds of resources? It becomes error-prone, inconsistent, and hard to scale.
+This is where Infrastructure as Code (IaC) comes in — and Terraform is one of the most powerful tools in this space.
+Terraform is a cloud-agnostic IaC tool that allows you to define and manage your cloud infrastructure using code. It uses HashiCorp Configuration Language (HCL) to declare resources in a readable, version-controllable way — enabling automation, collaboration, and repeatability.
 
+⚙️ Terraform Lifecycle Commands
+Here’s a quick overview of the typical Terraform workflow:
+* terraform init: Initializes the working directory, downloads the necessary provider plugins (e.g., AWS), sets up the backend (for remote state), and checks for syntax issues.
+* terraform plan: A dry run that shows what changes Terraform will make to your infrastructure — without actually applying them.
+* terraform apply: Executes the planned changes and creates/updates the resources on your cloud provider (e.g., AWS).
+
+Behind the scenes, Terraform makes API calls to  cloud provider to provision and manage infrastructure based on your defined configuration.
