@@ -67,5 +67,5 @@ Instead of hardcoding values, define input variables in a separate variables.tf 
 If the same Terraform logic needs to be reused across projects or environments, define it as a module.
 Then, call it in your Terraform file using the module block with a source path (local or remote).
 📤 Outputs:
-Define the values you want Terraform to print after execution — such as IP addresses, ARNs, or resource names.
+Define the values you want Terraform to print after apply — such as IP addresses, ARNs, or resource names.
 
