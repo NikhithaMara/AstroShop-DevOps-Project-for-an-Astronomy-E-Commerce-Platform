@@ -59,7 +59,7 @@ This project contains multiple microservices organized within a single GitHub re
 * 🔐 AWS authentication is handled through the configured AWS CLI, ensuring secure and authorized access to AWS services.
 * 📁 A separate backend.tf file is used for backend configuration, improving readability and separation of concerns.
 
-🚀 **CI/CD** — Automates build, test, and deployment using tools like GitHub Actions & ArgoCD.  
+🚀 **Continuous Integration/Delivery(CI/CD)** — Automates build, test, and deployment using tools like GitHub Actions & ArgoCD.  
 
 🔁 **CI** ensures the code is built and tested; **CD** delivers it to Kubernetes — faster, safer, and more efficient.  
 ✅ Implemented CI/CD for microservices architecture following below lifecycle for build and deployment
