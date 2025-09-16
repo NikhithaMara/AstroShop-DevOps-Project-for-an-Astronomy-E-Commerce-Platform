@@ -61,7 +61,7 @@ This project contains multiple microservices organized within a single GitHub re
 
 🚀 **CI/CD** — Automates build, test, and deployment using tools like GitHub Actions & ArgoCD.  
 🔁 **CI** ensures the code is built and tested; **CD** delivers it to Kubernetes — faster, safer, and more efficient.  
-✅ Implemented CI/CD for microservices architecture.
+✅ Implemented CI/CD for microservices architecture following below lifecycle for build and deployment
 <img width="887" height="398" alt="image" src="https://github.com/user-attachments/assets/68708853-6577-46fc-abc8-83ade21c4c45" />
 
 #### 🎨 Design Questions I Got When I Started
