@@ -14,9 +14,8 @@ The CI system:
 * Creates a Docker image
 * Scans the image
 * Updates Kubernetes manifests with that image
-
-Then comes CD — which uses tools like GitOps tools or ArgoCD to deploy the application on top of Kubernetes (K8s). So, CD is the continuous delivery of all your changes.
 Now the team member is confident in all changes and asks the reviewer to check it, saying CI has passed, which saves time and manual effort, and increases efficiency and quality.
+Then comes CD — which uses tools like GitOps tools or ArgoCD to deploy the application on top of Kubernetes (K8s). So, CD is the continuous delivery of all your changes.
 
 🔄 Pull Request
 A pull request is when we want your changes to be merged with the main branch and reviewed by a peer. We create a pull request by first creating a branch with your changes. 
