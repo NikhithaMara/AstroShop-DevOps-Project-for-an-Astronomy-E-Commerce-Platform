@@ -1,1 +1,25 @@
+🚀 CI/CD
+CI - Continuous Integration, in simpler terms, operates around the build process.
+CD - Continuous Delivery, in simpler terms, operates around the deployment process.
+
+Let’s consider a scenario: a team member made changes to the program and now wants it to be reviewed by a peer. Now, let’s say Ravi’s code has some security issues. 
+If other developers collaborate, it can cause problems for them as well if they work on that repo. The team member, X, needs to build/test his code, and the reviewer also needs to do that, which is a lot of manual effort and takes time.
+So, CI/CD came up here from DevOps to solve this problem. Instead of doing these tasks manually, we have CI — which uses tools like GitHub Actions, Jenkins — that run based on pull request or push events on GitHub.
+
+The CI system:
+* Checks out the code (pulls code from the repo)
+* Builds the code
+* Runs unit testing
+* Performs static code analysis (like detecting unused variables, deprecated methods)
+* Creates a Docker image
+* Scans the image
+* Updates Kubernetes manifests with that image
+
+Then comes CD — which uses tools like GitOps tools or ArgoCD to deploy the application on top of Kubernetes (K8s). So, CD is the continuous delivery of all your changes.
+Now the team member is confident in all changes and asks the reviewer to check it, saying CI has passed, which saves time and manual effort, and increases efficiency and quality.
+
+🔄 Pull Request
+A pull request is when we want your changes to be merged with the main branch and reviewed by a peer. We create a pull request by first creating a branch with your changes. 
+Before that, you make changes locally, commit them, and push the code to your repo — not the main branch.
+
 
