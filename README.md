@@ -125,6 +125,26 @@ Stability, Scalability, High availability and Easier maintenance and disaster re
 * Commit and Push:
   I committed the resolved files with a clear message and then pushed the changes back to the remote repository.
 
+#### 🚧 Challenges Faced in CICD
+🔧 Challenges Faced: CI Failure on Pull Request Trigger
+* The CI pipeline failed when triggered by a pull request due to missing permissions. The error showed that the GitHub Actions bot did not have read/write access to perform necessary tasks.
+✅ Fix: Enabled the required read/write permissions in repository settings under:
+Settings → Actions → General → Workflow permissions.
+* Kubernetes Manifest Update Failed
+The job to update the Kubernetes manifest with the newly built Docker image failed due to missing GitHub token permissions.
+✅ Fix: Used GitHub Secrets to securely store a GitHub Personal Access Token (PAT) with repo access, allowing the CI to commit and push updated manifests.
+* CI Pipeline Failed Due to Deprecated Code
+One of the microservices failed during the CI process because golint flagged usage of deprecated methods during static code analysis.
+✅ Lesson Learned: This highlighted the importance of maintaining code quality and keeping dependencies up to date — a true real-world debugging scenario.
+
+#### ✅ Best Practices Followed in CICD
+* Used GitHub Secrets Securely
+* Stored sensitive data such as Docker Hub credentials (username/token).
+* Stored GitHub token used for pushing updated Kubernetes manifests back to the repo.
+##### CI/CD Security:
+* Avoided hardcoding secrets or credentials in the codebase.
+* Granted only the minimum required permissions for workflows (principle of least privilege).
+
   
 
   
