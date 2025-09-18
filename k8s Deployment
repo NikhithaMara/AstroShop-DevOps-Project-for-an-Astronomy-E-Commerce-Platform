@@ -1,4 +1,4 @@
-Kubernetes Implementation for the project:
+#### Kubernetes Implementation for the project:
 
 * I have created an EKS Cluster using Terraform. To interact with the cluster, I am using the kubectl command-line tool, which I have installed on an EC2 instance.
  When I run kubectl get nodes, it doesn’t show any nodes because kubectl doesn’t know which cluster it is connected to.
