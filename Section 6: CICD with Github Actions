@@ -41,4 +41,4 @@ Added a Git token to enable the CI job to update the Kubernetes manifest stored 
 Continuous Delivery (CD)
 Continuous Delivery is the practice of making your changes available for deployment quickly and reliably. It can be implemented using tools like Ansible, shell scripts, or Python. However, in this project, I implemented CD using a GitOps tool — Argo CD.
 Argo CD continuously watches the Git repository for changes in Kubernetes manifests. When changes are detected, it automatically syncs and deploys them to the Kubernetes cluster (in this case, an EKS cluster). This GitOps approach ensures that the Git repository is the single source of truth, making deployments automated, traceable, and consistent.
-Using Argo CD in this project allowed seamless deployment of the updated Docker image to the EKS cluster whenever changes were pushed to the Git repository.
+Using Argo CD deployed on EKS clsuter in this project allowed seamless deployment of the updated Docker image to the EKS cluster whenever changes were pushed to the Git repository.
