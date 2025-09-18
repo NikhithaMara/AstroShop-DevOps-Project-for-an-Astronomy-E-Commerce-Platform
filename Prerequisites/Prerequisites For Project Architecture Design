@@ -46,7 +46,6 @@ may affect other modules                                      | Easier teamwork 
 #### API- Application Programming Interface
 An API, or Application Programming Interface, allows one application to communicate with another. It defines all the operations that can be performed and exposes API endpoints (URLs) where the service can be reached. To send and receive data, we use a protocol such as HTTP, gRPC, or others for communication over the network.
 
-
 #### Account with AWS, Install Docker, Terraform 
 #### Install Docker and I have an account with the Docker registry , I have used Dockerhub registry for pushing the Docker images
 
