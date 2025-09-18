@@ -141,7 +141,7 @@ One of the microservices failed during the CI process because golint flagged usa
 * Used GitHub Secrets Securely
 * Stored sensitive data such as Docker Hub credentials (username/token).
 * Stored GitHub token used for pushing updated Kubernetes manifests back to the repo.
-##### CI/CD Security:
+#### CI/CD Security:
 * Avoided hardcoding secrets or credentials in the codebase.
 * Granted only the minimum required permissions for workflows (principle of least privilege).
 
