@@ -31,5 +31,12 @@ pushes it to Docker Hub, and updates the Kubernetes manifest with the newly crea
 
 And as mentioned the CI workflow is in .github/workflows folder for reference.
 
-Challenges faced
-My update  job to k8s manifiest wioth teh new image craeted and i craeted the ci pine on pull rewuest but it was continupusly failed becuase of not
+Challenges Faced:
+In this project, I encountered issues with the CI pipeline, specifically during the job that updates the Kubernetes manifest with the newly created image. The pipeline, which was triggered on pull requests, continuously failed due to insufficient permissions in GitHub Actions.
+To resolve this, I Configured the necessary GitHub Actions permissions,Used GitHub Secrets to securely store the Docker Hub username and token for authentication.
+Added a Git token to enable the CI job to update the Kubernetes manifest stored in the Git repository.
+
+Continuous Delivery (CD)
+Continuous Delivery is the practice of making your changes available for deployment quickly and reliably. It can be implemented using tools like Ansible, shell scripts, or Python. However, in this project, I implemented CD using a GitOps tool — Argo CD.
+Argo CD continuously watches the Git repository for changes in Kubernetes manifests. When changes are detected, it automatically syncs and deploys them to the Kubernetes cluster (in this case, an EKS cluster). This GitOps approach ensures that the Git repository is the single source of truth, making deployments automated, traceable, and consistent.
+Using Argo CD in this project allowed seamless deployment of the updated Docker image to the EKS cluster whenever changes were pushed to the Git repository.
