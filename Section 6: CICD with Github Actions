@@ -26,6 +26,8 @@ When the source code is hosted in a GitHub repository, you need to create a .git
 In the YAML file, under the jobs section, you define tasks like checkout, build, and test and steps within each task and you can mention everything under one job too
 The most important part is the on section, which specifies when the workflow should be triggered — typically on push, pull_request, or other GitHub events.
 
+And under Actions tab a pipeline is shown and also if it fails rerun option for failed jobs is available.
+
 In this project, I have created a CI pipeline for a microservice that builds the code, runs unit tests, builds a Docker image, 
 pushes it to Docker Hub, and updates the Kubernetes manifest with the newly created image.
 
