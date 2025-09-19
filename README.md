@@ -92,14 +92,12 @@ Kubernetes was designed to orchestrate containers at scale. It handles:
 * Load balancing traffic
 * High availability through clusters
 * Disaster recovery features
-
-#### 🌐 My Use Case
 For local development and testing, Docker is great. But for production, I used a managed Kubernetes service (Elastic Kubernetes Service(EKS)) to ensure
 Stability, Scalability, High availability and Easier maintenance and disaster recovery
 
 #### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder.
 
-#### ✅ Issues Faced 
+#### ✅ Challenges Faced & Resolved
 ##### Used Docker Compose for testing whole application with dependent microservices on EC2 instance and EC2 ran into a no space issue.
 * Increased the size of the attached EBS volume from 8 GB to 30 GB using AWS.
 * Checked disk storage with df -h and block devices with lsblk.
@@ -141,38 +139,38 @@ One of the microservices failed during the CI process because golint flagged usa
 * Used GitHub Secrets Securely
 * Stored sensitive data such as Docker Hub credentials (username/token).
 * Stored GitHub token used for pushing updated Kubernetes manifests back to the repo.
+  
 #### CI/CD Security:
 * Avoided hardcoding secrets or credentials in the codebase.
 * Granted only the minimum required permissions for workflows (principle of least privilege).
   
+#### ⚠️ Challenges Faced & Solved in k8s
+
 #### 🕸️ Kubernetes Networking
-* 🏗️ I set up Kubernetes inside a **VPC** with private subnets.
-* 🔒 Initially, I realized that **ClusterIP** services are only accessible **within the cluster**.
-* 🚪 To connect pods from EC2 instances in different subnets within the same VPC, I used **NodePort**, exposing pods on static node ports.
-* ☁️ For external access, I configured **LoadBalancer** services, which created cloud load balancers (AWS ELB).
-* 🔄 I learned that pods communicate through **Services**, not direct IPs, because pod IPs can change after restarts.
+* I set up Kubernetes inside a **VPC** with private subnets.
+* Initially, I realized that **ClusterIP** services are only accessible **within the cluster**.
+* To connect pods from EC2 instances in different subnets within the same VPC, I used **NodePort**, exposing pods on static node ports.
+* For external access, I configured **LoadBalancer** services, which created cloud load balancers (AWS ELB).
+* I learned that pods communicate through **Services**, not direct IPs, because pod IPs can change after restarts.
 
 #### 🚦 Ingress and Load Balancer Controllers
 
-* 💸 I found **LoadBalancer** services simple but costly when scaling many microservices.
-* 🎯 To optimize, I implemented **Ingress** with path- and host-based routing rules using a single load balancer.
-* 🛠️ I deployed the **Ingress controller** (AWS ALB Ingress Controller) as a pod to manage load balancer creation automatically.
-* 🔐 Setup involved attaching IAM roles and policies to service accounts via **IAM OIDC providers**.
-*    BY IAM OIDC Ingress Controller has access outsid ethe EKS Cluster to create ALB
-* 📦 I installed the Ingress controller using **Helm**.
-* 🌐 For DNS, I used **Route53** with a domain registered on GoDaddy.
-* ⏳ DNS propagation took up to **48 hours**, which was very long time.
-
-#### ⚠️ Challenges I Faced & Solved
-* 🔒 By default, Kubernetes services are only accessible **inside the cluster**; to access pods externally or from other subnets, I had to use **LoadBalancer** services.
-* ❌ I discovered that LoadBalancer services don’t support advanced routing or HTTPS setup through manifests, requiring manual configuration.
-* 💡 To reduce costs and gain routing flexibility, I switched to using **Ingress controllers**, even though they require additional setup.
+* I found **LoadBalancer** services simple but costly when scaling many microservices.
+* To optimize, I implemented **Ingress** with path- and host-based routing rules using a single load balancer.
+* I deployed the **Ingress controller** (AWS ALB Ingress Controller) as a pod to manage load balancer creation automatically.
+* Setup involved attaching IAM roles and policies to service accounts via **IAM OIDC providers**.
+* BY IAM OIDC Ingress Controller has access outsid ethe EKS Cluster to create ALB
+* I installed the Ingress controller using **Helm**.
+* For DNS, I used **Route53** with a domain registered on GoDaddy.
+* DNS propagation took up to **48 hours**, which was very long time.
+* By default, Kubernetes services are only accessible **inside the cluster**; to access pods externally or from other subnets, I had to use **LoadBalancer** services.
+* I discovered that LoadBalancer services don’t support advanced routing or HTTPS setup through manifests, requiring manual configuration.
+* To reduce costs and gain routing flexibility, I switched to using **Ingress controllers**, even though they require additional setup.
 
 ## 🐞 Debugging Tips I Used
-* 🖥️ I used `kubectl exec` to monitor CPU and memory usage inside pods.
-* 📜 I checked pod logs frequently with `kubectl logs <pod-name>` to troubleshoot issues.
 
-
+* 🖥I used `kubectl exec` to monitor CPU and memory usage inside pods.
+* I checked pod logs frequently with `kubectl logs <pod-name>` to troubleshoot issues.
 
   
 
