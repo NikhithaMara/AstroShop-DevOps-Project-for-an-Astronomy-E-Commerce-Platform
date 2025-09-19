@@ -1,0 +1,4 @@
+#### This is an open-source project by OpenTelemetry. The source code is forked from GitHub and consists of multiple microservices
+written in different programming languages.
+As a DevOps engineer, I created Dockerfiles and Kubernetes manifests for each service, and configured both Ingress and a 
+load balancer to expose the services in Kubernetes.
