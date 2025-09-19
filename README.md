@@ -167,7 +167,7 @@ One of the microservices failed during the CI process because golint flagged usa
 * To reduce costs and gain routing flexibility, I switched to using **Ingress controllers**, even though they require additional setup.
 
 #### 🐞 Debugging Tips I Used
-* 🖥I used `kubectl exec` to monitor CPU and memory usage inside pods.
+* I used `kubectl exec` to monitor CPU and memory usage inside pods.
 * I checked pod logs frequently with `kubectl logs <pod-name>` to troubleshoot issues.
 
   
