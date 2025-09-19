@@ -59,7 +59,17 @@ This project contains multiple microservices organized within a single GitHub re
 * 🔐 AWS authentication is handled through the configured AWS CLI, ensuring secure and authorized access to AWS services.
 * 📁 A separate backend.tf file is used for backend configuration, improving readability and separation of concerns.
 
-  
+#### Kubernetes Implementation Overview and Design Features Learnt
+* Service Accounts: Secure pod access to the Kubernetes API with custom permissions.
+* Deployments & ReplicaSets: Ensure desired number of pods for high availability, auto-healing, and scaling with Horizontal * Pod Autoscaler (HPA).
+* Services: Provide stable DNS and service discovery, abstracting ephemeral pod IPs for reliable inter-service communication.
+* LoadBalancer Service: Exposes applications externally using AWS ELB but can be costly when used per microservice.
+* Ingress Controller (AWS ALB): Efficient, cost-effective routing with host- and path-based rules via a single loadbalancer,    simplifying external access.
+* Networking: EKS cluster runs inside a private VPC;
+  ClusterIP for internal communication,
+  NodePort to expose pods within the VPC,
+  LoadBalancer to expose services externally.
+* DNS: Managed with AWS Route53; domain registered via GoDaddy.
 
 🚀 **Continuous Integration/Delivery(CI/CD)** — Automates build, test, and deployment using tools like GitHub Actions & ArgoCD.  
 🔁 **CI** ensures the code is built and tested; **CD** delivers it to Kubernetes — faster, safer, and more efficient.  
