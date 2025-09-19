@@ -106,7 +106,7 @@ Kubernetes was designed to orchestrate containers at scale. It handles:
 For local development and testing, Docker is great. But for production, I used a managed Kubernetes service (Elastic Kubernetes Service(EKS)) to ensure
 Stability, Scalability, High availability and Easier maintenance and disaster recovery
 
-#### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder also every service used as seperate folder with detailed explanation.
+#### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, check the Prerequisites folder also every service used has a seperate folder with detailed explanation.
 
 #### ✅ Challenges Faced & Resolved
 
