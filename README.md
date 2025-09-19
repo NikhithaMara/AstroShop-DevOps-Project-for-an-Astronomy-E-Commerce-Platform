@@ -51,7 +51,7 @@ This project contains multiple microservices organized within a single GitHub re
 * 🛠️ Since the microservices are developed using different languages Java, Python, and Go. I created customized Dockerfiles for each service based on their specific requirements.
 * This approach ensured all microservices are properly containerized and run smoothly in their respective environments.
 
-#### 🚀 Deployed E-commerce Application on EKS Using Terraform
+#### 🚀 Deployed E-commerce Application on EKS & Created VPC/EKS Using Terraform
 ✅ Terraform Best Practices Followed:
 * 🔒 Remote state is stored securely in Amazon S3, with DynamoDB used for state locking to avoid concurrent operations.
 * 🚫 State files are not committed to GitHub, as they may contain sensitive information such as IPs, resource IDs, and secrets.
@@ -59,8 +59,9 @@ This project contains multiple microservices organized within a single GitHub re
 * 🔐 AWS authentication is handled through the configured AWS CLI, ensuring secure and authorized access to AWS services.
 * 📁 A separate backend.tf file is used for backend configuration, improving readability and separation of concerns.
 
-🚀 **Continuous Integration/Delivery(CI/CD)** — Automates build, test, and deployment using tools like GitHub Actions & ArgoCD.  
+  
 
+🚀 **Continuous Integration/Delivery(CI/CD)** — Automates build, test, and deployment using tools like GitHub Actions & ArgoCD.  
 🔁 **CI** ensures the code is built and tested; **CD** delivers it to Kubernetes — faster, safer, and more efficient.  
 ✅ Implemented CI/CD for microservices architecture following below lifecycle for build and deployment
 
