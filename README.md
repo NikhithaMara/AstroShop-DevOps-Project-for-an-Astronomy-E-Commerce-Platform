@@ -91,7 +91,7 @@ Reverse proxy can act as a load balancer but offers additional features like Use
 
 #### 🧩 Why can't I just use Docker instead of Kubernetes?
 Docker was introduced to solve the problem of "it works on my machine but not on yours." Containers package your application with all its dependencies, making it portable and consistent across environments. Containers are also lightweight, spin up quickly, and make better use of system resources compared to running multiple full VMs. This allows for more efficient resource utilization, especially in cloud or virtualized environments. However, Docker alone is not enough for production-grade deployments.
-##### 🚨 Limitations of Docker without Kubernetes:
+#### 🚨 Limitations of Docker without Kubernetes:
 Containers are ephemeral (short-lived). If one crashes, it must be restarted manually or with basic Docker tools.
 Networking is fragile. If one container communicates with another using its IP, and that container restarts, its IP may change — breaking communication.
 Docker doesn't natively provide service discovery, load balancing, high availability, or self-healing.
@@ -106,7 +106,7 @@ Kubernetes was designed to orchestrate containers at scale. It handles:
 For local development and testing, Docker is great. But for production, I used a managed Kubernetes service (Elastic Kubernetes Service(EKS)) to ensure
 Stability, Scalability, High availability and Easier maintenance and disaster recovery
 
-#### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder.
+#### 🔍 For a detailed explanation of Monolithic/Microservice architecture & Proxies, please check the Prerequisites folder also every service used as seperate folder with detailed explanation.
 
 #### ✅ Challenges Faced & Resolved
 
@@ -172,7 +172,6 @@ One of the microservices failed during the CI process because golint flagged usa
 * I installed the Ingress controller using **Helm**.
 * For DNS, I used **Route53** with a domain registered on GoDaddy.
 * DNS propagation took up to **48 hours**, which was very long time.
-  
 * By default, Kubernetes services are only accessible **inside the cluster**; to access pods externally or from other subnets, I had to use **LoadBalancer** services.
 * I discovered that LoadBalancer services don’t support advanced routing or HTTPS setup through manifests, requiring manual configuration.
 * To reduce costs and gain routing flexibility, I switched to using **Ingress controllers**, even though they require additional setup.
