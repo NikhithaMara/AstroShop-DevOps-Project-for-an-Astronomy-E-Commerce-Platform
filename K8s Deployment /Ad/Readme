@@ -1,0 +1,109 @@
+Kubernetes Implementation overview:
+
+When we deploy applications as pods on Kubernetes, they use the following services/components:
+Service Account:
+Just like users have a user account to communicate through the cluster (for example, if I want to communicate with the EKS cluster, I will use aws configure through CLI and provide access and secret access tokens), similarly, a pod containing a microservice needs an account to interact with the Kubernetes cluster, so that the service runs on Kubernetes or interacts with Kubernetes. This is called a service account.
+By default, it has permission to run on the cluster within the namespace. When we don’t create a service account, we have a default account assigned.
+We have Kubernetes API server interaction to use the config file. Then, we need permissions for the service account where we create a role and assign permissions and bind that to the service account.
+kubectl get sa
+gives the service accounts.
+________________________________________
+Deployment:
+Containers are ephemeral in nature, meaning short-lived. Let’s say if there is no restart policy by default in containers — if the container is gone, it’s gone. So, no healing, and containers can be used only in local development.
+But Kubernetes deployment services solve this problem, which during high availability and scaling, ReplicaSets in deployment services ensure if the scaling is mentioned as 3 pods, then ReplicaSets always ensure to maintain the current state with the desired state. Meaning, if 1 pod dies, it checks the desired state and automatically creates it.
+So deployment services handle auto-healing and autoscaling.
+________________________________________
+Service:
+Let’s say the frontend microservice wants to talk to the backend microservice pod. Now, if the backend pod is gone and restarted, the IP address changes.
+So, under environmental variables of the frontend, if you put the backend IP address to communicate, but now if the IP address changes because the pod restarted, the frontend will cache the older IP address and it can’t reach it.
+This is a problem of service discovery.
+So, the frontend interacts with the backend not by IP but via the service DNS, which communicates using labels and selectors. Even though IP changes, the new pod will have the same label selectors and must be unique.
+So, now the frontend communicates with the backend service, not the backend pod directly. The service maps to the appropriate backend pods based on labels, independent of IP addresses.
+So this is solved by the service.
+If we want to expose that application or frontend microservice to external traffic, we can create a service of type LoadBalancer, which will route traffic to the frontend pod.
+________________________________________
+Load Balancer:
+ELB routes traffic to backend servers outside Kubernetes. To expose applications, services need to be exposed as service type LoadBalancer.
+Like that, we need different services to be exposed to different targets — one more load balancer — so it’s costly.
+________________________________________
+HPA and ReplicaSet:
+ReplicaSets maintain a fixed number of pods every time.
+HPA handles the pods using metrics during traffic loads, so ReplicaSets are updated by HPA automatically and ensure auto-healing for the minimum number of pods.
+________________________________________
+Every resource in Kubernetes is written in YAML manifests and runs as pods.
+Manifest files of every resource have common parameters such as:
+•	apiVersion - version of Kubernetes you are using
+•	kind - which service it is, either ServiceAccount, Deployment, Service, etc.
+•	metadata - which has the name of the application and labels to identify a unique pod or service (you can have many labels)
+•	spec - we define how many pods, features like replicas (which are handled by ReplicaSets), and in the template, we write pod configuration
+Metadata is where we specify labels for a pod, which the service uses for service discovery of that pod.
+Pod configuration includes container name, image, service account, ports, environmental variables, and volumes.
+So, there is a separation of deployment and pod, which is separated as deployment labels to identify deployments and configuration under spec, and pod labels and configuration under template. Labels of pods are used for service discovery by a service.
+This is similar to writing a Docker Compose file. Under env, we specify communication with other service names, resource limits like memory and CPU, and volumes.
+________________________________________
+Similar to deployment service, a service has:
+•	apiVersion
+•	kind of service
+•	metadata with name and labels
+•	spec under which we have service type (ClusterIP, NodePort, LoadBalancer), and ports (service port, target port)
+The selector is used to identify pods using labels, which are specified in deployment under the pod template labels.
+The type specifies how the service is exposed for communication — whether it’s within the cluster, on nodes, or outside for external users.
+Pods talk to each other using Services, not directly.
+To talk to a pod, you go through the Service that targets it because pods are ephemeral and their IP changes when restarted or recreated.
+We use:
+kubectl apply -f manifest.yaml
+to apply the manifest to the cluster.
+________________________________________
+Kubernetes networking:
+We have a VPC with private subnets where the EKS cluster is exposed.
+Communication happens to the service. We can expose the service only within the cluster.
+Kubernetes creates a private network using CNI.
+When service type is ClusterIP, the service can be accessed only within the cluster, so ClusterIP is for service internal communication.
+If an EC2 instance within the same VPC but a different subnet wants to communicate with the pod, it cannot as it is in a different network.
+For that, we create NodePort, where Kubernetes exposes the pod on a static port on the node, and it can be accessed externally.
+If the external world wants to access it, we create a LoadBalancer type service, where the API server talks to the cloud controller manager of the cloud provider (I used AWS).
+AWS creates a load balancer, and it’s exposed through a fully qualified service name to external users.
+A service is not a pod running, it is just a resource.
+Use:
+kubectl get svc
+to see services.
+I have implemented the application using service type LoadBalancer and accessed the application.
+________________________________________
+Downsides of Load Balancer service types:
+From the service manifest, type is just a type but doesn’t define any rules for it like HTTPS or advanced configuration.
+We can only configure these manually in AWS.
+Other load balancers like NGINX or F5 support multiple configurations, which LoadBalancer service type doesn’t.
+Also, LoadBalancer services are costly because all external access microservices need different load balancers.
+Instead, we can create one load balancer and assign target groups tied to the cloud controller manager.
+If we use AWS cloud, we get only ALB.
+What if CCM is not supported on any Kubernetes environment except AWS? For example, NGINX or F5 provide more flexibility.
+So why be tied to only ALB?
+________________________________________
+Ingress:
+Advantages: It’s easy to configure just by changing the service type in YAML, so operation is reduced.
+With Ingress, we can define any number of rules, and it is cost-effective. We can create one load balancer using host- or path-based routing and any load balancer based on the controller, not dependent on CCM.
+Ingress refers to incoming traffic, and Kubernetes has a resource kind called Ingress that helps define routing rules on incoming traffic.
+Creating an ingress manifest with kind Ingress:
+For example, any company wants to access their servers using DNS, not through IP.
+We define routing rules so that when Ingress is read by the Ingress controller, it will create a load balancer.
+Ingress has the same common elements as apiVersion and kind Ingress and metadata.
+Spec has rules defined such as host and path.
+Ingress is only created for services exposed to external users.
+Ingress controller is a pod running on Kubernetes and creates an ELB load balancer.
+________________________________________
+How ALB controller in EKS clusters creates an ELB outside the cluster:
+In AWS, we have an IAM user/role with policies attached that have permissions.
+ALB service account needs an IAM role and attached policy, which is done via IAM OIDC provider.
+Download policies from AWS documentation and create a policy, attach this to the service account of the ALB controller.
+I used Helm to install ALB ingress controller using the service account.
+We can use kubectl to apply manifests.
+________________________________________
+DNS domain configuration:
+I used Route53 as DNS service. I registered a domain on GoDaddy, transferred to Route53, and configured DNS.
+DNS propagation time can take up to 48 hours.
+________________________________________
+Challenges faced:
+•	Kubernetes services are by default accessible only inside the cluster.
+•	How to access pods from EC2 instances which are in different subnets but the same VPC? We need NodePort or LoadBalancer services.
+•	LoadBalancer services can’t be configured with HTTPS or advanced rules from manifests; we have to configure them manually.
+•	Ingress provides advanced routing and cost savings but requires additional setup.
