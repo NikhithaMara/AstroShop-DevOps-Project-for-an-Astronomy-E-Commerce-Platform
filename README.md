@@ -1,6 +1,3 @@
-#### 👋 About Me
-Hi, I’m Nikhitha Mara , an aspiring DevOps Engineer passionate about learning AWS and deploying projects to build real-world DevOps skills. I’m actively working on hands-on projects and sharpening my knowledge to break into DevOps roles. This repo documents my learning journey and showcases projects focused on cloud infrastructure, automation, CI/CD, and monitoring.
-
 #### Project : AstroShop-DevOps-Project-for-an-Astronomy-E-Commerce-Platform
 
 #### 🧠 Why I Chose This Project
